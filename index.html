@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>abre com carinho</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 15px 30px;
+      font-size: 1em;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #ff6f91;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .heart {
+      font-size: 2.5em;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Oi, você 👋</h1>
+    <p>
+      A gente se conheceu pela internet.<br>
+      Faz pouco tempo.<br>
+      Mesmo assim, isso já significa algo pra mim.
+    </p>
+
+    <button onclick="mostrar()">clica aqui</button>
+
+    <div id="conteudo" class="hidden">
+      <p>
+        Não é sobre tempo.<br>
+        É sobre conexão.<br>
+        E isso aqui começou bonito.
+      </p>
+
+      <button onclick="mostrarFotos()">ver algo bonito</button>
+
+      <div id="fotos" class="gallery hidden">
+        <img src="https://source.unsplash.com/300x300/?stars" />
+        <img src="https://source.unsplash.com/300x300/?moon" />
+        <img src="https://source.unsplash.com/300x300/?night" />
+        <img src="https://source.unsplash.com/300x300/?sky" />
+      </div>
+
+      <p style="margin-top:25px;">
+        web namoro ✦ dia 4 ✦ sem pressa
+      </p>
+
+      <div class="heart">❤️</div>
+    </div>
+  </div>
+
+  <script>
+    function mostrar() {
+      document.getElementById("conteudo").style.display = "block";
+    }
+
+    function mostrarFotos() {
+      document.getElementById("fotos").style.display = "grid";
+    }
+  </script>
+</body>
+</html>
